@@ -3,10 +3,10 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
 os:
-  edit: 'cursor {{filename}}'
-  editAtLine: 'cursor {{filename}}:{{line}}'
+  edit: 'open {{filename}} -a "Cursor"'
+  editAtLine: 'open {{filename}}:{{line}} -a "Cursor"'
   editInTerminal: false
-  openDirInEditor: 'cursor {{dir}}'
+  openDirInEditor: 'open {{dir}} -a "Cursor"'
 customCommands:
   - key: '<c-u>'
     context: 'commits'

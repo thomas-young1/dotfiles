@@ -84,4 +84,6 @@ compdef _gt_yargs_completions gt
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
+alias c="open $1 -a \"Cursor\""
+alias v="open $1 -a \"Visual Studio Code\""
 
