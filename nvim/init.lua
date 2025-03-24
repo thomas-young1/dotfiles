@@ -144,7 +144,7 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
@@ -188,6 +188,32 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- rename variable function
+vim.keymap.set('n', '<leader>r', function()
+  -- when rename opens the prompt, this autocommand will trigger
+  -- it will "press" CTRL-F to enter the command-line window `:h cmdwin`
+  -- in this window I can use normal mode keybindings
+  local cmdId
+  cmdId = vim.api.nvim_create_autocmd({ 'CmdlineEnter' }, {
+    callback = function()
+      local key = vim.api.nvim_replace_termcodes('<C-f>', true, false, true)
+      vim.api.nvim_feedkeys(key, 'c', false)
+      vim.api.nvim_feedkeys('0', 'n', false)
+      -- autocmd was triggered and so we can remove the ID and return true to delete the autocmd
+      cmdId = nil
+      return true
+    end,
+  })
+  vim.lsp.buf.rename()
+  -- if LPS couldn't trigger rename on the symbol, clear the autocmd
+  vim.defer_fn(function()
+    -- the cmdId is not nil only if the LSP failed to rename
+    if cmdId then
+      vim.api.nvim_del_autocmd(cmdId)
+    end
+  end, 500)
+end) 
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -659,7 +685,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -757,6 +783,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        go = { 'gofmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -982,9 +1009,9 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
