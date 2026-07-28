@@ -10,6 +10,7 @@ Bootstrap an Apple Silicon Mac with one command:
 
 This:
 
-1. Installs Homebrew and mise
-2. Clones this repository to `~/.dotfiles`
-3. Applies the mise `bootstrap` configuration
+1. Enables Touch ID for `sudo`
+2. Installs Homebrew and mise
+3. Clones this repository to `~/.dotfiles`
+4. Applies the mise `bootstrap` configuration

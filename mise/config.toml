@@ -39,6 +39,17 @@ uv = "0.5.20"
 [bootstrap.user]
 login_shell = "/opt/homebrew/bin/fish"
 
+[bootstrap.hooks.pre-packages]
+# Enables Touch ID for `sudo` commands
+run = """
+if ! sudo test -f /etc/pam.d/sudo_local; then
+  sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
+fi
+if ! sudo grep -Eq '^[[:space:]]*auth[[:space:]]+sufficient[[:space:]]+pam_tid[.]so' /etc/pam.d/sudo_local; then
+  printf 'auth       sufficient     pam_tid.so\\n' | sudo tee -a /etc/pam.d/sudo_local >/dev/null
+fi
+"""
+
 [bootstrap.macos.dock]
 autohide = true
 
