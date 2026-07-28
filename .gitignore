@@ -1,6 +1,26 @@
-github-copilot
-graphite
-iterm2
-raycast
-zed
+# macOS-generated filesystem metadata
 .DS_Store
+
+# Machine-local application state and telemetry
+1Password/
+github-copilot/
+graphite/
+homebrew/
+hunk/
+iterm2/
+raycast/
+tanstack/
+
+# Credentials, authentication state, and service connection details
+context7/
+gh/hosts.yml
+ngrok/
+opencode/opencode.jsonc
+opencode/service-*.json
+
+# Shell state generated independently on each machine
+fish/fish_variables
+
+# Zed conversations and generated prompt databases
+zed/conversations/
+zed/prompts/
