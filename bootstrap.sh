@@ -11,6 +11,8 @@ if [[ "$(uname -s)" != Darwin || "$(uname -m)" != arm64 ]]; then
 fi
 
 if ! command -v brew >/dev/null 2>&1; then
+    printf 'Administrator access is required to install Homebrew.\n'
+    sudo -v
     printf 'Installing Homebrew...\n'
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
