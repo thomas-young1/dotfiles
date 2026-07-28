@@ -18,11 +18,11 @@ uv = "0.5.20"
 "brew:gnupg" = "latest"
 "brew:lazygit" = "latest"
 "brew:neovim" = "latest"
-"brew:pure" = "latest"
 "brew:wget" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:zed" = "latest"
 
 [dotfiles]
-"~/.zshrc" = "~/.dotfiles/zsh/.zshrc"
 "~/.config/fish" = "~/.dotfiles/fish"
 "~/.config/gh/config.yml" = "~/.dotfiles/gh/config.yml"
 "~/.config/ghostty/config" = "~/.dotfiles/ghostty/config"
