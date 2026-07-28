@@ -11,6 +11,7 @@ ripgrep = "14.1.1"
 uv = "0.5.20"
 
 [bootstrap.packages]
+"brew:fish" = "latest"
 "brew:gh" = "latest"
 "brew:git" = "latest"
 "brew:git-delta" = "latest"
@@ -22,6 +23,7 @@ uv = "0.5.20"
 
 [dotfiles]
 "~/.zshrc" = "~/.dotfiles/zsh/.zshrc"
+"~/.config/fish" = "~/.dotfiles/fish"
 "~/.config/gh/config.yml" = "~/.dotfiles/gh/config.yml"
 "~/.config/ghostty/config" = "~/.dotfiles/ghostty/config"
 "~/.config/lazygit/config.yml" = "~/.dotfiles/lazygit/config.yml"
@@ -31,6 +33,9 @@ uv = "0.5.20"
 "~/.config/opencode/AGENTS.md" = "~/.dotfiles/opencode/AGENTS.md"
 "~/.config/opencode/cli.json" = "~/.dotfiles/opencode/cli.json"
 "~/.config/zed/settings.json" = "~/.dotfiles/zed/settings.json"
+
+[bootstrap.user]
+login_shell = "/opt/homebrew/bin/fish"
 
 [bootstrap.macos.dock]
 autohide = true
