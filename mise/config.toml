@@ -1,0 +1,41 @@
+[tools]
+bun = "1.1.43"
+fzf = "0.57.0"
+go = "1.26.3"
+jq = "1.7.1"
+just = "1.47.0"
+node = "22.13.0"
+pnpm = "10.12.1"
+python = "3.12.6"
+ripgrep = "14.1.1"
+uv = "0.5.20"
+
+[bootstrap.packages]
+"brew:gh" = "latest"
+"brew:git" = "latest"
+"brew:git-delta" = "latest"
+"brew:gnupg" = "latest"
+"brew:lazygit" = "latest"
+"brew:neovim" = "latest"
+"brew:pure" = "latest"
+"brew:wget" = "latest"
+
+[dotfiles]
+"~/.zshrc" = "~/.config/zsh/.zshrc"
+
+[bootstrap.macos.dock]
+autohide = true
+
+[bootstrap.macos.finder]
+show_pathbar = true
+
+[bootstrap.macos.keyboard]
+key_repeat = 1
+initial_key_repeat = 10
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+
+[bootstrap.macos.defaults]
+NSGlobalDomain = { AppleShowAllExtensions = true }
+"com.apple.dock" = { tilesize = 34.0, autohide-delay = 0.0, autohide-time-modifier = 0 }
