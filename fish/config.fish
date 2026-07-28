@@ -1,6 +1,7 @@
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx EDITOR 'zed --wait'
 set -gx VISUAL $EDITOR
+set -g fish_greeting
 
 fish_add_path --prepend \
     $HOME/.opencode/bin \

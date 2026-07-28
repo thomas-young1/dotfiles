@@ -25,6 +25,7 @@ uv = "0.5.20"
 "brew-cask:zed" = "latest"
 
 [dotfiles]
+"~/.hushlogin" = "~/.dotfiles/.hushlogin"
 "~/.config/fish" = "~/.dotfiles/fish"
 "~/.config/gh/config.yml" = "~/.dotfiles/gh/config.yml"
 "~/.config/ghostty/config" = "~/.dotfiles/ghostty/config"
