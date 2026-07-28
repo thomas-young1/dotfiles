@@ -1,17 +1,16 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --side-by-side --paging=never
 os:
   edit: 'open {{filename}} -a "Cursor"'
   editAtLine: 'open {{filename}}:{{line}} -a "Cursor"'
   editInTerminal: false
   openDirInEditor: 'open {{dir}} -a "Cursor"'
 customCommands:
-  - key: '<c-u>'
-    context: 'commits'
-    command: 'git reset --soft HEAD~'
-  - key: '<c-e>'
-    context: 'files'
-    command: '{ git diff --name-only --diff-filter=AM; git ls-files --others --exclude-standard; } | xargs -o cursor' 
-
+  - key: "<c-u>"
+    context: "commits"
+    command: "git reset --soft HEAD~"
+  - key: "<c-e>"
+    context: "files"
+    command: "{ git diff --name-only --diff-filter=AM; git ls-files --others --exclude-standard; } | xargs -o cursor"
