@@ -3,14 +3,11 @@ git:
     - colorArg: always
       pager: delta --dark --side-by-side --paging=never
 os:
-  edit: 'open {{filename}} -a "Cursor"'
-  editAtLine: 'open {{filename}}:{{line}} -a "Cursor"'
-  editInTerminal: false
-  openDirInEditor: 'open {{dir}} -a "Cursor"'
+  editPreset: zed
 customCommands:
   - key: "<c-u>"
     context: "commits"
     command: "git reset --soft HEAD~"
   - key: "<c-e>"
     context: "files"
-    command: "{ git diff --name-only --diff-filter=AM; git ls-files --others --exclude-standard; } | xargs -o cursor"
+    command: "{ git diff --name-only --diff-filter=AM; git ls-files --others --exclude-standard; } | xargs -o zed"
