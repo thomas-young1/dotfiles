@@ -20,6 +20,7 @@ uv = "0.5.20"
 "brew:neovim" = "latest"
 "brew:wget" = "latest"
 "brew-cask:ghostty" = "latest"
+"brew-cask:raycast" = "latest"
 "brew-cask:zed" = "latest"
 
 [dotfiles]
