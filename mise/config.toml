@@ -21,7 +21,16 @@ uv = "0.5.20"
 "brew:wget" = "latest"
 
 [dotfiles]
-"~/.zshrc" = "~/.config/zsh/.zshrc"
+"~/.zshrc" = "~/.dotfiles/zsh/.zshrc"
+"~/.config/gh/config.yml" = "~/.dotfiles/gh/config.yml"
+"~/.config/ghostty/config" = "~/.dotfiles/ghostty/config"
+"~/.config/lazygit/config.yml" = "~/.dotfiles/lazygit/config.yml"
+"~/.config/mise/config.toml" = "~/.dotfiles/mise/config.toml"
+"~/.config/mise/mise.lock" = "~/.dotfiles/mise/mise.lock"
+"~/.config/nvim" = "~/.dotfiles/nvim"
+"~/.config/opencode/AGENTS.md" = "~/.dotfiles/opencode/AGENTS.md"
+"~/.config/opencode/cli.json" = "~/.dotfiles/opencode/cli.json"
+"~/.config/zed/settings.json" = "~/.dotfiles/zed/settings.json"
 
 [bootstrap.macos.dock]
 autohide = true
