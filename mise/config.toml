@@ -65,3 +65,8 @@ tap_to_click = true
 [bootstrap.macos.defaults]
 NSGlobalDomain = { AppleShowAllExtensions = true }
 "com.apple.dock" = { tilesize = 34.0, autohide-delay = 0.0, autohide-time-modifier = 0 }
+
+[bootstrap.macos.launchd.agents.caps-lock-to-escape]
+program = "/usr/bin/hidutil"
+args = ["property", "--set", '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":30064771129,"HIDKeyboardModifierMappingDst":30064771113}]}']
+run_at_load = true
