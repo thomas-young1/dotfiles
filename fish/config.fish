@@ -27,4 +27,5 @@ if status is-interactive
     abbr --add gsw git switch
     abbr --add lg lazygit
     abbr --add oc opencode
+    abbr --add c clear
 end
